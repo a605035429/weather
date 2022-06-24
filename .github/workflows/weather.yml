@@ -2,9 +2,9 @@ name: python-weather 1
 on: 
   push:
     branches:
-      - master
+      - main
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 16 * * *'
 jobs:
   my-job:
     name: My Job
