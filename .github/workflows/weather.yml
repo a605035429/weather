@@ -1,0 +1,22 @@
+name: python-weather 1
+on: 
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 14 * * *'
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v3
+    - name: install
+      run: |
+        echo '''${{ secrets.FIREBASEKEY }}''' > firebasekey.json
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: python weather
+      run: |
+        python3 weather.py
