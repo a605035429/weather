@@ -3,7 +3,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 #資料庫金鑰
-cred = credentials.Certificate('serviceAccount.json')
+cred = credentials.Certificate('firebasekey.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 #創建資料庫
